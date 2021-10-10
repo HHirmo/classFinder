@@ -1,11 +1,8 @@
 data class Pattern(val words: MutableList<String>, val endsWithSpace: Boolean, val ignoreCase: Boolean)
 
 fun parsePattern(pattern: String): Pattern {
-    if (!pattern.startsWith("\'") || !pattern.endsWith("\'")) {
-        throw PatternFormatException()
-    }
-    val patternEndsWithSpace = pattern.endsWith(" \'")
-    val trimmedPattern = pattern.removeSurrounding("\'").removeSuffix(" ")
+    val patternEndsWithSpace = pattern.endsWith(" ")
+    val trimmedPattern = pattern.removeSuffix(" ")
 
     var ignoreCase = true
     val patternWords = mutableListOf<String>()
