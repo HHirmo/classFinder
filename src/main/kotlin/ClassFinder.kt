@@ -32,7 +32,7 @@ class ClassFinder {
         val className = fullClass.substringAfterLast(".")
         var classNameSearchPosition = 0
         for (patternChar in pattern.words[0].replace("*", "").toCharArray()) {
-            val result = className.toLowerCase().drop(classNameSearchPosition).indexOfFirst { it == patternChar }
+            val result = className.drop(classNameSearchPosition).indexOfFirst { it.equals(patternChar, true)  }
             if (result == -1) return false
             classNameSearchPosition += result + 1
         }
