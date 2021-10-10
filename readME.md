@@ -1,12 +1,12 @@
-#Class finder
+# Class finder
 
-##Compiling
+## Compiling
  The program can be compiled into an executable .jar file using the kotlin command line compiler
 ```
 kotlinc src\main\kotlin -include-runtime -d class-finder.jar
 ```
 
-##Running
+## Running
 The .jar file can be run with the following command
 ```
 java -jar class-finder.jar <filename> <pattern>
